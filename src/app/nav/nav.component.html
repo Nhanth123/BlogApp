@@ -3,7 +3,7 @@
     <a class="navbar-brand" routerLink="/" routerLinkActive="active"
       >Blog App</a
     >
-    <ul class="navbar-nav mr-auto" *ngIf="currentUser$|async">
+    <ul class="navbar-nav mr-auto" *ngIf="accountService.currentUser$ | async">
       <!-- <ng-container *ngIf="accountService.currentUser$ | async"> -->
       <li class="nav-item">
         <a class="nav-link" routerLink="/members" routerLinkActive="active"
@@ -57,7 +57,7 @@
             <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
         </form> -->
   </div>
-  <form *ngIf="!currentUser$ | async" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
+  <form *ngIf="(currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
     <input name="username" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text" placeholder="Username" />
     <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password"placeholder="Password" />
     <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
