@@ -22,6 +22,7 @@
     "bootstrap": "4.1.1",
     "bootswatch": "^4.6.0",
     "ngx-bootstrap": "^6.2.0",
+    "ngx-gallery": "^5.10.0",
     "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
