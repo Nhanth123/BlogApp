@@ -11,14 +11,13 @@ export class AppComponent implements OnInit {
   title = 'Blog app';
   users: any;
   constructor(private accountService: AccountService) { }
+  
   ngOnInit() {
-
     this.setCurrentUser();
   }
+
   setCurrentUser() {
     const user: User = JSON.parse(localStorage.getItem('user'));
     this.accountService.setCurrentUser(user);
   }
-
-
 }

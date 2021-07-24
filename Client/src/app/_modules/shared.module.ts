@@ -5,6 +5,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -24,3 +25,4 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
   ]
 })
 export class SharedModule { }
+
