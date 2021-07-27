@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       { path: 'members', component: MemberListComponent},
       { path: 'members/:username', component: MemberDetailComponent },
-      { path: 'member/edit', component: MemberEditComponent, canDeactivate :[PreventUnsavedChangedGuard] },
+      { path: 'member/edit', component: MemberEditComponent, canDeactivate : [PreventUnsavedChangedGuard] },
       { path: 'lists', component: ListsComponent },
       { path: 'messages', component: MessagesComponent },
     ],
@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'errors', component: TestErrorsComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'server-error', component: ServerErrorComponent },
-  { path: '**', component: HomeComponent, pathMatch: 'full' },
+  { path: '**', component: NotFoundComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -40,6 +40,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               break;
             case 404:
               this.router.navigateByUrl('/not-found');
+              break;
             case 500:
               const navigationExtras: NavigationExtras = {
                 state: { error: error.error },
