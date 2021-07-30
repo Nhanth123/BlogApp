@@ -13,7 +13,7 @@ export class AccountService {
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login(model: any) {
     return this.http.post(this.baseUrl + 'account/login', model).pipe(
@@ -26,10 +26,10 @@ export class AccountService {
       })
     );
   }
-  register(model: any){
+  register(model: any) {
     return this.http.post(this.baseUrl + 'account/register', model).pipe(
-      map((user : User) => {
-        if(user){
+      map((user: User) => {
+        if (user) {
           localStorage.setItem('user', JSON.stringify(user));
           this.currentUserSource.next(user);
         }

@@ -5,7 +5,6 @@ import { environment } from 'src/environments/environment';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +15,7 @@ export class MembersService {
   constructor(private http: HttpClient) { }
 
   getMembers() {
-    if (this.members.length > 0) return of(this.members);
+    if (this.members.length > 0) { return of(this.members); }
     return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
       map(members => {
         this.members = members;
@@ -24,9 +23,14 @@ export class MembersService {
       })
     );
   }
+  // getMembers() {
+  //   return this.http.get<Member[]>(this.baseUrl + 'users');
+  // }
+
+
   getMember(username: string) {
     const member = this.members.find(x => x.username === username);
-    if( member !== undefined) return of(member);
+    if ( member !== undefined) { return of(member); }
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 
