@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./member-edit.component.css']
 })
 export class MemberEditComponent implements OnInit {
-  @ViewChild('editForm') editForm: NgForm;
+   @ViewChild('editForm') editForm: NgForm;
   member: Member;
   user: User;
   @HostListener('window: beforeunload', ['$event']) unloadNotification($event: any) {
@@ -23,11 +23,12 @@ export class MemberEditComponent implements OnInit {
   }
 
   constructor(private accountService: AccountService, private memberService: MembersService,
-    private toastr: ToastrService) {
-    this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user)
+              private toastr: ToastrService) {
+    this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
   ngOnInit(): void {
+    this.loadMember();
   }
 
   loadMember() {

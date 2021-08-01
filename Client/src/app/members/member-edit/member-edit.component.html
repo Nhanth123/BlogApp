@@ -1,6 +1,6 @@
 <div class="row" *ngIf="member">
     <div class="col-4">
-        <h1>Your profile</h1>
+        <h4>Your profile</h4>
     </div>
     <div class="col-8">
         <div class="alert alert-info" *ngIf="editForm.dirty">
@@ -30,15 +30,16 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button [disabled]="!editForm.dirty" form="editForm" type="submit"
-                    class="btn btn-success btn-block">Save changes</button>
+                <button [disabled]="!editForm.dirty" 
+                        form="editForm" type="submit"
+                        class="btn btn-success btn-block">Save changes</button>
             </div>
         </div>
     </div>
     <div class="col-8">
         <tabset class="member-tabset">
             <tab heading="About {{ member.knownAs }}">
-                <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMemebr()">
+                <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
                     <h4>Description</h4>
                     <textarea class="form-control" [(ngModel)]="member.introduction" name="introduction"
                         cols="6"></textarea>
@@ -50,7 +51,7 @@
                     <h4 class="mt-2">Location details:</h4>
                     <div class="form-inline">
                         <label for="city">City: </label>
-                        <input [(ngModel)]="member.introduction" type="text" name="city" class="form-control mx-2">
+                        <input [(ngModel)]="member.city" type="text" name="city" class="form-control mx-2">
                         <label for="city">Country: </label>
                         <input [(ngModel)]="member.country" type="text" name="country" class="form-control mx-2">
                     </div>

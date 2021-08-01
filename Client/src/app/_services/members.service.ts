@@ -23,20 +23,16 @@ export class MembersService {
       })
     );
   }
-  // getMembers() {
-  //   return this.http.get<Member[]>(this.baseUrl + 'users');
-  // }
-
 
   getMember(username: string) {
     const member = this.members.find(x => x.username === username);
-    if ( member !== undefined) { return of(member); }
+    if (member !== undefined) { return of(member); }
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 
   updateMember(memeber: Member) {
     return this.http.put(this.baseUrl + 'users', memeber).pipe(
-      map( () => {
+      map(() => {
         const index = this.members.indexOf(memeber);
         this.members[index] = memeber;
       })
