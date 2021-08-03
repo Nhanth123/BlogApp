@@ -16,9 +16,9 @@ export class RegisterComponent implements OnInit {
   maxDate: Date;
   validationErrors: string[] = [];
 
-  constructor(private accountService: AccountService, 
+  constructor(private accountService: AccountService,
               private toastr: ToastrService,
-              private fb: FormBuilder, 
+              private fb: FormBuilder,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -38,16 +38,16 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required,
       Validators.minLength(4), Validators.maxLength(8)]],
       confirmPassword: ['', [Validators.required, this.matchValues('password')]]
-    })
+    });
     this.registerForm.controls.password.valueChanges.subscribe(() => {
       this.registerForm.controls.confirmPassword.updateValueAndValidity();
-    })
+    });
   }
 
   matchValues(matchTo: string): ValidatorFn {
     return (control: AbstractControl) => {
-      return control?.value === control?.parent?.controls[matchTo].value ? null : { isMaching: true }
-    }
+      return control?.value === control?.parent?.controls[matchTo].value ? null : { isMaching: true };
+    };
   }
 
   register() {
