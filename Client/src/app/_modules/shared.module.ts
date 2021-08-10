@@ -18,7 +18,7 @@ import { FileUploadModule } from 'ng2-file-upload';
     TabsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     NgxGalleryModule,
-    FileUploadModule,
+    FileUploadModule
   ],
   exports: [
     BsDropdownModule,

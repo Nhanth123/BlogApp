@@ -1,10 +1,10 @@
 <div class="form-group">
     <input 
     [class.is-invalid]="ngControl.touched && ngControl.invalid"
-    type="{{ type }}" 
+    type="{{type}}" 
     class="form-control" 
     [formControl] ="ngControl.control"
-    placeholder="{{ label }}">
+    placeholder="{{label}}">
     <div *ngIf="ngControl.control.errors?.required" 
         class="invalid-feedback">
         Please enter a {{label}}
