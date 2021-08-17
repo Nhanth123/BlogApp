@@ -2,19 +2,19 @@
     <div class="card-img-wrapper">
         <img src="{{ member.photoUrl || './assets/user.png'}}" alt="{{ member.knownAs }}" class="card-img-top">
         <ul class="list-inline member-icons animate text-center">
-            <div class="list-inline-item">
+            <li class="list-inline-item">
                 <button routerLink='/members/{{ member.username }}' 
                 class="btn btn-primary"><i class="fa fa-user"></i>
                 </button>
-            </div>
-            <div class="list-inline-item">
-                <button class="btn btn-primary"><i class="fa fa-heart"></i>
+            </li>
+            <li class="list-inline-item">
+                <button (click)="addLike(member)" class="btn btn-primary"><i class="fa fa-heart"></i>
                 </button>
-            </div>
-            <div class="list-inline-item">
+            </li>
+            <li class="list-inline-item">
                 <button class="btn btn-primary"><i class="fa fa-envelope"></i>
                 </button>
-            </div>
+            </li>
         </ul>
     </div>
     <div class="card-body p-1">
